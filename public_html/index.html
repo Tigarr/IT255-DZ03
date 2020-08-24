@@ -1,0 +1,123 @@
+
+
+<html>
+    <head>
+        <title>Iskoristi priliku da isprobas novi Volvo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+
+    </head>
+    <body>
+        <form action="potvrda.html" method="GET">
+
+
+                
+                <div class="cell cell-1">
+                    <label for="model">Model:</label>
+                </div>
+                <div class="cell cell-2">
+                    <select onchange="document.getElementById('myimage').src = carMap[this.value];">
+                        <option>-</option>
+                        <option value="s60">S60</option>
+                        <option value="s90">S90 </option>
+                        <option value="xc60">XC60</option>
+                        <option value="xc90">XC90</option>
+                    </select><br>
+                </div>
+                <div class="cell cell-3">
+                    <label for="ime" onkeyup="validate();">Ime:</label>
+                    <div id="errFirst"></div>
+                </div>
+                <div class="cell cell-4">
+                    <input type="text" id="ime"/><br>
+                </div>    
+                <div class="cell cell-5">
+                    <label for="prezime">Prezime:</label>
+                </div>
+                <div class="cell cell-6">
+                    <input type="text" id="prezime"/><br>
+                </div>
+                <div class="cell cell-7">
+                    <label for="email">E-mail:</label>
+                </div>
+                <div class="cell cell-8">
+                    <input type="email" id="email" name="emailadress"/><br>
+                </div>
+                <div class="cell cell-9">
+                    <label for="telefon">Telefon:</label>
+                </div>
+                <div class="cell cell-10">
+                    <input type="tel" id="telefon" name="phone" pattern="[0-9]{10}"/><br>
+                </div>
+                <div class="cell cell-11">
+                    <label for="datumRezervacije">Datum rezervacije:</label>
+                </div>
+                <div class="cell cell-12">
+                    <input type="date" id="datumRezervacije" name="bday"/><br>
+                </div>
+                <div class="cell cell-13">
+                    <label for="vremeRezervacije">Vreme rezervacije:</label>
+                </div>
+                <div class="cell cell-14">
+                    <input type="time" name="usr_time" id="vremeRezervacije"/>
+                </div>
+                <div class="cell cell-14">
+
+                    <input type="submit" value="Potvrdi">
+
+                </div>
+
+                <div class="picture">
+                    <img id="myimage" src="Slike/volvoAmblem.png" >
+                </div>
+
+
+
+
+
+
+
+            </div>
+        </form>
+
+        <script>
+            var carMap = {
+                "s60": "Slike/s60.png",
+                "s90": "Slike/s90.png",
+                "xc60": "Slike/xc60.png",
+                "xc90": "Slike/xc90.png"
+            };
+
+
+            function validate() {
+                var div = "errFirst";
+                var input = document.getElementById('ime').value;
+                var error = "<span style='color:red'>Unesite Vase ime!</span>";
+
+                if (input == "") {
+                    document.getElementById(div).innerHTML = error;
+                } else {
+                    document.getElementById(div).innerHTML = "OK!";
+
+                }
+            }
+
+
+
+
+        </script>
+
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
